@@ -309,9 +309,9 @@ SnapTranslator.dict.zh_CN = {
     'hide':
         '隐藏',
     'shown?':
-        '已显示?',
+        '角色显示是否为真',
     'go to %layer layer':
-        '移至 %layer 层',
+        '移至最 %layer 层',
     'front':
         '顶',
     'back':
@@ -627,15 +627,15 @@ SnapTranslator.dict.zh_CN = {
     'pen down':
         '落笔',
     'pen down?':
-        '画笔已落下?',        
+        '检查落笔状态是否为真',        
     'pen up':
         '抬笔',
     'set pen color to %clr':
-        '把画笔的颜色值设定为 %clr',        
+        '将画笔的颜色值设定为 %clr',        
     'change pen %hsva by %n':
-        '把画笔的 %hsva 增加 %n',
+        '将画笔的 %hsva 增加 %n',
     'set pen %hsva to %n':
-        '把画笔的 %hsva 设定为 %n',        
+        '将画笔的 %hsva 设定为 %n',        
     'hue':
         '色调',
     'transparency':
@@ -643,23 +643,23 @@ SnapTranslator.dict.zh_CN = {
     'pen %pen':
         '画笔的 %pen',        
     'change pen color by %n':
-        '把画笔的颜色值增加 %n',
+        '将画笔的颜色值增加 %n',
     'set pen color to %n':
-        '把画笔的颜色值设定为 %n',
+        '将画笔的颜色值设定为 %n',
     'change pen shade by %n':
-        '把画笔的色度增加 %n',
+        '将画笔的色度增加 %n',
     'set pen shade to %n':
-        '把画笔的色度设定为 %n',
+        '将画笔的色度设定为 %n',
     'change pen size by %n':
-        '把画笔的大小增加 %n',
+        '将画笔的大小增加 %n',
     'set pen size to %n':
-        '把画笔的大小设定为 %n',
+        '将画笔的大小设定为 %n',
     'set background color to %clr':
-        '把背景色设置为 %clr',
+        '将背景色设置为 %clr',
     'change background %hsva by %n':
-        '把背景的 %hsva 增加 %n',        
+        '将背景的 %hsva 增加 %n',        
     'set background %hsva to %n':
-        '把背景的 %hsva 设定为 %n',        
+        '将背景的 %hsva 设定为 %n',        
     'stamp':
         '图章',
     'fill':
@@ -687,7 +687,7 @@ SnapTranslator.dict.zh_CN = {
     'pressed':
         '按下',
     'dropped':
-        '放下',
+        '选择并放下',
     'mouse-entered':
         '鼠标碰到',
     'mouse-departed':
@@ -707,7 +707,7 @@ SnapTranslator.dict.zh_CN = {
     'broadcast %msg and wait':
         '广播 %msg 并等待',
     'send %msg to %spr':
-        '发送消息 %msg 给 %spr',
+        '将消息 %msg 发送给 %spr',
     'Message name':
         '消息名称',
     'message':
@@ -795,11 +795,11 @@ SnapTranslator.dict.zh_CN = {
     'mouse y':
         '鼠标的y坐标',
     'mouse down?':
-        '按下了鼠标？',
+        '是否按下了鼠标？',
     'key %key pressed?':
         '按下了 %key 键？',
     '%rel to %dst':
-        '%rel 到 %dst',    
+        '角色到 %dst 的 %rel',    
     '%asp at %loc' :
         '%asp 于 %loc',    
     'sprites':
