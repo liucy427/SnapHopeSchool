@@ -329,7 +329,7 @@ SnapTranslator.dict.zh_CN = {
     'alert %mult%s':
         '警告: %mult%s',
     'save %imgsource as costume named %s':
-        '把 %imgsource 保存为造型，命名为 %s',
+        '将 %imgsource 保存为造型，命名为 %s',
     'stage image':
         '舞台图片',
     'jukebox':
@@ -365,7 +365,7 @@ SnapTranslator.dict.zh_CN = {
     'resize...':
         '改变大小…',
     'show a handle\nwhich can be dragged\nto change this morph\'s extent':
-        '显示一个把手，\n拖动可改变morph大小',
+        '显示一个滑块，\n拖动可改变morph大小',
     'pick up':
         '抓起',
     'disattach and put \ninto the hand':
@@ -377,7 +377,7 @@ SnapTranslator.dict.zh_CN = {
     'move...':
         '移动…',
     'show a handle\nwhich can be dragged\nto move this morph':
-        '显示一个把手，\n拖动可移动这个morph',
+        '显示一个滑块，\n拖动可移动这个morph',
     'inspect...':
         '查看…',
     'open a window\non all properties':
@@ -549,7 +549,7 @@ SnapTranslator.dict.zh_CN = {
     'scroll frame':
         '可滚动框架',
     'handle':
-        '把手',
+        '滑块',
     'string':
         '字符串',
     'speech bubble':
@@ -595,13 +595,13 @@ SnapTranslator.dict.zh_CN = {
     'samples':
         '样本数据',          
     'change volume by %n':
-        '把音量增加 %n',
+        '将音量增加 %n',
     'set volume to %n %':
-        '把音量设定为 %n %',  
+        '将音量设定为 %n %',  
     'volume':
         '音量',
     'change balance by %n':
-        '把声音平衡增加 %n',
+        '将声音平衡增加 %n',
     'set balance to %n':
         '设置声音平衡为 %n',
     'balance':
@@ -609,9 +609,9 @@ SnapTranslator.dict.zh_CN = {
     'set instrument to %inst':
         '将乐器设定为 %inst',
     'change tempo by %n':
-        '把节奏加快 %n',
+        '将节奏加快 %n',
     'set tempo to %n bpm':
-        '把节奏设定为 %n',
+        '将节奏设定为 %n',
     'tempo':
         '节奏',
     'play frequency %n Hz':
@@ -881,7 +881,7 @@ SnapTranslator.dict.zh_CN = {
     'motion':
         '动作',
     'set video transparency to %n':
-        '把视频透明度设置为 %n',       
+        '将视频透明度设置为 %n',       
     'is %setting on?':
         '%setting 已启用?',
     'set %setting to %b':
@@ -903,7 +903,7 @@ SnapTranslator.dict.zh_CN = {
     '%n mod %n':
         '%n 除以 %n 的余数',
     'round %n':
-        '把 %n 四舍五入',
+        '将 %n 四舍五入',
     '%fun of %n':
         '%fun %n',
     'pick random %n to %n':
@@ -919,9 +919,9 @@ SnapTranslator.dict.zh_CN = {
     'false':
         '假',
     'join %words':
-        '把 %words 连起来',
+        '将 %words 连起来',
     'split %s by %delim':
-        '把 %s 按 %delim 分开',
+        '将 %s 按 %delim 分开',
     'hello':
         '你好',
     'world':
@@ -948,22 +948,22 @@ SnapTranslator.dict.zh_CN = {
     'Variable name':
         '变量名',
     'Script variable name':
-        '脚本变量名',
+        '代码变量名',
     'inherit %shd':
         '继承 %shd',
     'Delete a variable':
         '删除变量',
 
     'set %var to %s':
-        '把 %var 设定为 %s',
+        '将 %var 设定为 %s',
     'change %var by %n':
-        '把 %var 增加 %n',
+        '将 %var 增加 %n',
     'show variable %var':
         '显示变量 %var',
     'hide variable %var':
         '隐藏变量 %var',
     'script variables %scriptVars':
-        '脚本变量 %scriptVars',
+        '代码变量 %scriptVars',
 
     // lists:
     'list %exp':
@@ -981,13 +981,13 @@ SnapTranslator.dict.zh_CN = {
     'thing':
         '东西',
     'add %s to %l':
-        '把 %s 放到 %l 后面',
+        '将 %s 放到 %l 后面',
     'delete %ida of %l':
         '删除第 %ida 项 %l',
     'insert %s at %idx of %l':
-        '把 %s 插入到第 %idx 项 %l',
+        '将 %s 插入到第 %idx 项 %l',
     'replace item %idx of %l with %s':
-        '把第 %idx 项 %l 替换为 %s',
+        '将第 %idx 项 %l 替换为 %s',
     'numbers from %n to %n':
         '从 %n 到 %n 的数字',
     'is %l empty?':
@@ -1059,11 +1059,11 @@ SnapTranslator.dict.zh_CN = {
     '(in a new window)':
         '（打开新窗口）',
     'save project data as XML\nto your downloads folder':
-        '把项目数据以XML格式\n保存到下载文件夹',
+        '将项目数据以XML格式\n保存到下载文件夹',
     'show project data as XML\nin a new browser window':
         '打开新窗口，展示项目的XML数据',
     'Export Project As...':
-        '把项目导出到…',
+        '将项目导出到…',
     'Exported!':
         '导出好了！',
     'Export blocks...':
@@ -1136,9 +1136,9 @@ SnapTranslator.dict.zh_CN = {
     'password has been changed.':
         '密码改好了。',
     'Export all scripts as pic...':
-        '把所有脚本导出为图片…',
+        '将所有代码导出为图片…',
     'show a picture of all scripts\nand block definitions':
-        '把所有脚本展示成一张图片',
+        '将所有脚本展示成一张图片',
     'url...':
         '网址…',
     'Service:':
@@ -1154,7 +1154,7 @@ SnapTranslator.dict.zh_CN = {
     'export project without media...':
         '导出项目，不含媒体…',
     'export project as cloud data...':
-        '把项目以云端数据格式导出…',
+        '将项目以云端数据格式导出…',
     'open shared project from cloud...':
         '打开共享在云端的项目…',
 
@@ -1412,7 +1412,7 @@ SnapTranslator.dict.zh_CN = {
     'uncheck for smooth\nscaling of vector costumes':
         '矢量造型平滑缩放',
     'check to rasterize\nSVGs on import':
-        '导入SVG时把它点阵化',
+        '导入SVG时将它点阵化',
     'Persist linked sublist IDs':
         '保存子列表ID',
     'uncheck to disable\nsaving linked sublist identities':
@@ -1480,11 +1480,11 @@ SnapTranslator.dict.zh_CN = {
 
     // codification blocks
     'map %cmdRing to %codeKind %code':
-        '把 %cmdRing 转换成 %codeKind %code',
+        '将 %cmdRing 转换成 %codeKind %code',
     'map String to code %code':
-        '把字符串转成代码 %code',
+        '将字符串转成代码 %code',
     'map %codeListPart of %codeListKind to code %code':
-        '把 %codeListKind 的 %codeListPart 转成代码 %code',
+        '将 %codeListKind 的 %codeListPart 转成代码 %code',
     'code of %cmdRing':
         '%cmdRing 的代码',
     'item':
@@ -1539,7 +1539,7 @@ SnapTranslator.dict.zh_CN = {
     'transient':
         '不记录',
     'uncheck to save contents\nin the project':
-        '把变量内容保存在项目里',
+        '将变量内容保存在项目里',
     'check to prevent contents\nfrom being saved':
         '不保存变量内容',
     'find blocks...':
@@ -1575,9 +1575,9 @@ SnapTranslator.dict.zh_CN = {
     'open a new window\nwith a picture of the stage':
         '打开一个新窗口，显示舞台的图片',
     'turn pen trails into new costume...':
-        '把笔迹变成新造型…',
+        '将笔迹变成新造型…',
     'turn all pen trails and stamps\ninto a new costume for the\ncurrently selected sprite':
-        '把所有笔迹和图章变成当前选中角色的一个新造型',
+        '将所有笔迹和图章变成当前选中角色的一个新造型',
 
     // scripting area
     'clean up':
@@ -1736,7 +1736,7 @@ SnapTranslator.dict.zh_CN = {
     'Save Project':
         '保存项目…',
     'Saving project\nto the cloud...':
-        '把项目保存到云端…',
+        '将项目保存到云端…',
     'saved.':
         '项目已保存。',
 
