@@ -269,7 +269,7 @@ SnapTranslator.dict.zh_CN = {
     'costume #':
         '造型编号',
     'new costume %l width %dim height %dim':
-        '创建造型 %l 宽度 %dim 高度 %dim',
+        '创建新造型 %l 宽度 %dim 高度 %dim',
     'say %s for %n secs':
         '说 %s %n 秒',
     'say %s':
