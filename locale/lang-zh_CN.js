@@ -1,7 +1,7 @@
 /*
     lang-zh_CN.js
     Simplified Chinese translation for SNAP!
-    written by 五百刀/邓江华/孟锡峰
+    written by cccczl
     Copyright (C) 2016 by Jens Mönig
     This file is part of Snap!.
     Snap! is free software: you can redistribute it and/or modify
@@ -121,16 +121,16 @@ SnapTranslator.dict.zh_CN = {
     'language_name':
         '简体中文',
     'language_translator':
-        '五百刀/邓江华/曹儒林',
+        'cccczl',
     'translator_e-mail':
-        'ubertao@qq.com/djh@rhjxx.cn',
+        'cccczl@qq.com',
     'last_changed':
-        '2020-05-13',
+        '2020-09-7',
 
     // GUI
     // control bar:
     'untitled':
-        '无名项目',
+        '未命名项目',
     'development mode':
         '开发模式',
 
@@ -146,7 +146,7 @@ SnapTranslator.dict.zh_CN = {
     'Control':
         '控制',
     'Sensing':
-        '探测',
+        '侦测',
     'Operators':
         '运算',
     'Variables':
@@ -162,7 +162,7 @@ SnapTranslator.dict.zh_CN = {
 
     // tabs:
     'Scripts':
-        '脚本',
+        '代码',
     'Costumes':
         '造型',
     'Backgrounds':
@@ -178,11 +178,11 @@ SnapTranslator.dict.zh_CN = {
 
     // rotation styles:
     'don\'t rotate':
-        '不能旋转',
+        '不可旋转',
     'can rotate':
-        '可以旋转',
+        '任意旋转',
     'only face left/right':
-        '只能水平翻转',
+        '左右翻转',
 
     // new sprite button:
     'add a new sprite':
@@ -190,16 +190,16 @@ SnapTranslator.dict.zh_CN = {
     'add a new Turtle sprite':
         '添加一个海龟角色',
     'paint a new sprite':
-        '绘制一个新角色',
+        '绘制一个角色',
     'take a camera snapshot and\nimport it as a new sprite':
-        '用摄像头拍摄一个新角色',    
+        '摄像头拍摄一个角色',    
 
     // tab help
     'costumes tab help':
-        '把网页或电脑中的图片拖到这里，可以添加一个造型',
+        '图片拖到这里，可以添加一个造型',
 
     'import a sound from your computer\nby dragging it into here':
-        '把电脑中的声音文件拖到这里，可以添加一个声音',
+        '声音文件拖到这里，可以添加一个声音',
 
     // primitive blocks:
 
@@ -225,15 +225,15 @@ SnapTranslator.dict.zh_CN = {
 
     // motion:
     'Stage selected:\nno motion primitives':
-        '选中了舞台:\n舞台不能使用运动积木',
+        '舞台区域:\n不能使用运动模组中的代码块',
 
 
     'move %n steps':
         '移动 %n 歩',
     'turn %clockwise %n degrees':
-        '旋转 %clockwise %n 度',
+        '右旋转 %clockwise %n 度',
     'turn %counterclockwise %n degrees':
-        '旋转 %counterclockwise %n 度',
+        '左旋转 %counterclockwise %n 度',
     'point in direction %dir':
         '面向 %dir 度',
     'point towards %dst':
@@ -245,13 +245,13 @@ SnapTranslator.dict.zh_CN = {
     'glide %n secs to x: %n y: %n':
         '在 %n 秒钟内滑到 x: %n y: %n',
     'change x by %n':
-        '把x坐标增加 %n',
+        '将x坐标增加 %n',
     'set x to %n':
-        '把x坐标设定为 %n',
+        '将x坐标设定为 %n',
     'change y by %n':
-        '把y坐标增加 %n',
+        '将y坐标增加 %n',
     'set y to %n':
-        '把y坐标设定为 %n',
+        '将y坐标设定为 %n',
     'if on edge, bounce':
         '碰到边缘就反弹',
     'x position':
@@ -279,11 +279,11 @@ SnapTranslator.dict.zh_CN = {
     'think %s':
         '思考 %s',
     'Hello!':
-        '你好！',
+        '你好!',
     'Hmm...':
-        '嗯……',
+        '嗯...',
     '%img of costume %cst':
-        '取 %img 于 %cst', 
+        '从 %cst 获取 %img', 
     'pixels':
         '像素',
     'current':
@@ -291,17 +291,17 @@ SnapTranslator.dict.zh_CN = {
     'stretch %cst x: %n y: %n %':
         '拉伸 %cst 比例 x: %n y: %n %',               
     'change %eff effect by %n':
-        '把 %eff 效果增加 %n',
+        '将 %eff 特效增加 %n',
     'set %eff effect to %n':
-        '把 %eff 效果设定为 %n',
+        '将 %eff 特效设定为 %n',
     'clear graphic effects':
-        '清除所有图形效果',
+        '清除特效',
     '%eff effect':
-        '%eff 效果',        
+        '%eff 特效',        
     'change size by %n':
-        '把角色的大小增加 %n',
+        '将角色的大小增加 %n',
     'set size to %n %':
-        '把角色的大小设定为 %n %',
+        '将角色的大小设定为 %n %',
     'size':
         '大小',
     'show':
@@ -681,7 +681,7 @@ SnapTranslator.dict.zh_CN = {
     'when %keyHat key pressed':
         '当按下 %keyHat 键',
     'when I am %interaction':
-        '当 %interaction 我',
+        '当 %interaction 角色',
     'clicked':
         '点击',
     'pressed':
@@ -717,7 +717,7 @@ SnapTranslator.dict.zh_CN = {
     'wait %n secs':
         '等待 %n 秒',
     'wait until %b':
-        '直到 %b 前都等待',
+        '一直等待直到 %b ',
     'forever %loop':
         '重复执行 %loop',
     'repeat %n %loop':
@@ -725,11 +725,11 @@ SnapTranslator.dict.zh_CN = {
     'repeat until %b %loop':
         '重复执行直到 %b %loop',
     'for %upvar = %n to %n %cla':
-        '重复执行 因子 %upvar 从 %n 到 %n %cla',        
+        '重复执行 %upvar 从 %n 到 %n %cla',        
     'if %b %c':
-        '如果 %b %c',
+        '如果 %b 那么 %c',
     'if %b %c else %c':
-        '如果 %b %c 否则 %c',
+        '如果 %b 那么 %c 否则 %c',
     'if %b then %s else %s':
         '如果 %b 返回 %s 否则 %s',        
     'report %s':
@@ -739,15 +739,15 @@ SnapTranslator.dict.zh_CN = {
     'all':
         '全部',
     'this script':
-        '这个脚本',
+        '这部分代码',
     'this block':
         '这块积木',
     'stop %stopOthersChoices':
         '停止 %stopOthersChoices',
     'all but this script':
-        '所有其他脚本',
+        '所有其他代码',
     'other scripts in sprite':
-        '这个角色的其他脚本',
+        '这个角色的其他代码',
     'pause all %pause':
         '暂停所有的 %pause',
     'run %cmdRing %inputs':
