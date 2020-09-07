@@ -283,7 +283,7 @@ SnapTranslator.dict.zh_CN = {
     'Hmm...':
         '嗯...',
     '%img of costume %cst':
-        '从 %cst 获取 %img', 
+        '获取 %img 从 %cst', 
     'pixels':
         '像素',
     'current':
