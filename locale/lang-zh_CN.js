@@ -799,7 +799,7 @@ SnapTranslator.dict.zh_CN = {
     'key %key pressed?':
         '按下了 %key 键？',
     '%rel to %dst':
-        '%rel 到角色 %dst',    
+        '侦测%rel ,角色到 %dst',    
     '%asp at %loc' :
         '%asp 于 %loc',    
     'sprites':
