@@ -263,7 +263,7 @@ SnapTranslator.dict.zh_CN = {
 
     // looks:
     'switch to costume %cst':
-        '换成 %cst 造型',
+        '更换 %cst 造型',
     'next costume':
         '下一个造型',
     'costume #':
