@@ -1774,19 +1774,19 @@ SnapTranslator.dict.zh_CN = {
 
     // variable dialog
     'for all sprites':
-        '给所有角色用',
+        '适用于所有角色',
     'for this sprite only':
-        '给这个角色用',
+        '仅适用于当前角色',
 
     // block dialog
     'Change block':
         '修改积木',
     'Command':
-        '命令',
+        '指令型',
     'Reporter':
-        '报告',
+        '输入型',
     'Predicate':
-        '谓语',
+        '布尔型',
 
     // block editor
     'Block Editor':
