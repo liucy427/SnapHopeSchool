@@ -127,14 +127,14 @@ SnapTranslator.dict.zh_CN = {
     'last_changed':
         '2020-09-7',
 
-    // GUI
-    // control bar:
+    // GUI 图形界面
+    // control bar 控制栏:
     'untitled':
         '未命名项目',
     'development mode':
         '开发模式',
 
-    // categories:
+    // categories 模组分类:
     'Motion':
         '运动',
     'Looks':
@@ -156,11 +156,12 @@ SnapTranslator.dict.zh_CN = {
     'Other':
         '其他',
 
-    // editor:
+    //缺少了事件，被合并到控制中，回头考虑是否拆分出来
+    // editor 编辑是否:
     'draggable':
         '允许拖动',
 
-    // tabs:
+    // tabs 选项卡:
     'Scripts':
         '代码',
     'Costumes':
@@ -170,13 +171,13 @@ SnapTranslator.dict.zh_CN = {
     'Sounds':
         '声音',
 
-    // names:
+    // names 区域名称:
     'Sprite':
         '角色',
     'Stage':
         '舞台',
 
-    // rotation styles:
+    // rotation styles 角色旋转方式:
     'don\'t rotate':
         '不可旋转',
     'can rotate':
@@ -184,7 +185,8 @@ SnapTranslator.dict.zh_CN = {
     'only face left/right':
         '左右翻转',
 
-    // new sprite button:
+    // new sprite button 新角色按钮:
+    // 添加角色没有找到放置在什么地方
     'add a new sprite':
         '添加角色',
     'add a new Turtle sprite':
@@ -194,7 +196,7 @@ SnapTranslator.dict.zh_CN = {
     'take a camera snapshot and\nimport it as a new sprite':
         '摄像头拍摄一个角色',    
 
-    // tab help
+    // tab help 角色造型和声音选项卡帮助
     'costumes tab help':
         '图片拖到这里，可以添加一个造型',
 
@@ -223,7 +225,7 @@ SnapTranslator.dict.zh_CN = {
         without breaking its functionality.
     */
 
-    // motion:
+    // motion 运动:
     'Stage selected:\nno motion primitives':
         '舞台区域:\n不能使用运动模组中的代码块',
 
@@ -261,7 +263,7 @@ SnapTranslator.dict.zh_CN = {
     'direction':
         '方向',
 
-    // looks:
+    // looks 外观:
     'switch to costume %cst':
         '更换 %cst 造型',
     'next costume':
@@ -319,7 +321,7 @@ SnapTranslator.dict.zh_CN = {
     'go back %n layers':
         '下移 %n 层',
 
-    // development mode
+    // development mode 开发模式未找到在哪里操作
     'development mode \ndebugging primitives:':
         '开发模式\n调试积木：',
     'wardrobe':
