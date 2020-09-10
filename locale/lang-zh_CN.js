@@ -321,7 +321,7 @@ SnapTranslator.dict.zh_CN = {
     'go back %n layers':
         '下移 %n 层',
 
-    // development mode 开发模式未找到在哪里操作
+    // development mode 开发模式
     'development mode \ndebugging primitives:':
         '开发模式\n调试积木：',
     'wardrobe':
@@ -621,7 +621,7 @@ SnapTranslator.dict.zh_CN = {
     'stop frequency':
         '停止演奏频率', 
     'play %n Hz for %n secs':
-        '演奏频率 %n 赫兹 %n 秒',
+        '演奏频率 %n 赫兹 %n 秒', 
 
     // pen:
     'clear':
@@ -646,7 +646,7 @@ SnapTranslator.dict.zh_CN = {
         '画笔的 %pen',        
     'change pen color by %n':
         '将画笔的颜色值增加 %n',
-    'set pen color to %n':
+    'set pen color to %n': //代码块中未找到
         '将画笔的颜色值设定为 %n',
     'change pen shade by %n':
         '将画笔的色度增加 %n',
@@ -710,7 +710,7 @@ SnapTranslator.dict.zh_CN = {
         '广播 %msg 并等待',
     'send %msg to %spr':
         '将消息 %msg 发送给 %spr',
-    'Message name':
+    'Message name': //没有
         '消息名称',
     'message':
         '消息',
@@ -741,18 +741,18 @@ SnapTranslator.dict.zh_CN = {
     'all':
         '全部',
     'this script':
-        '这部分代码',
+        '本组代码',
     'this block':
-        '这块积木',
+        '本块积木',
     'stop %stopOthersChoices':
         '停止 %stopOthersChoices',
     'all but this script':
         '所有其他代码',
     'other scripts in sprite':
-        '这个角色的其他代码',
+        '本角色的其他代码',
     'pause all %pause':
         '暂停所有的 %pause',
-    'run %cmdRing %inputs':
+    'run %cmdRing %inputs': //(到下面斜杠位置，不理解，无法确认翻译正确)
         '运行 %cmdRing %inputs',
     'launch %cmdRing %inputs':
         '启动 %cmdRing %inputs',
@@ -766,18 +766,18 @@ SnapTranslator.dict.zh_CN = {
         '带延续运行 %cmdRing',
     'call %cmdRing w/continuation':
         '带延续调用 %cmdRing',
-    'warp %c':
+    'warp %c':  //
         '一步完成 %c',
     'when I start as a clone':
-        '当我被克隆',
+        '当作为克隆体启动时',
     'create a clone of %cln':
-        '克隆一个 %cln',
+        '克隆 %cln',
     'a new clone of %cln':
-        '%cln 的一个新克隆',
+        '从 %cln 创建新克隆体',
     'myself':
         '自己',
     'delete this clone':
-        '删除这个克隆',
+        '删除这个克隆体',
 
     // sensing:
     'touching %col ?':
@@ -785,7 +785,7 @@ SnapTranslator.dict.zh_CN = {
     'touching %clr ?':
         '碰到颜色 %clr ？',
     'color %clr is touching %clr ?':
-        '颜色 %clr 碰到颜色 %clr ？',
+        '颜色 %clr 碰到 %clr ？',
     'ask %s and wait':
         '询问 %s 并等待',
     'what\'s your name?':
@@ -797,13 +797,13 @@ SnapTranslator.dict.zh_CN = {
     'mouse y':
         '鼠标的y坐标',
     'mouse down?':
-        '是否按下了鼠标？',
+        '按下鼠标？',
     'key %key pressed?':
-        '按下了 %key 键？',
+        '按下 %key 键？',
     '%rel to %dst':
-        '侦测 %rel 角色到 %dst',    
+        '侦测 %rel 角色到 %dst',//需要调整参数测试  侦测角色到 %dst 的 %rel   
     '%asp at %loc' :
-        '%asp 于 %loc',    
+        '%asp 于 %loc', //取  谁 %loc 的 %asp
     'sprites':
         '角色',
     'object %self':
@@ -817,7 +817,7 @@ SnapTranslator.dict.zh_CN = {
     'timer':
         '计时器',
     '%att of %spr':
-        '取 %att 于 %spr',
+        '取 %att 于 %spr', //取 谁%spr 的 %att
     'my %get':
         '我的 %get',
     'http:// %s':
@@ -828,14 +828,14 @@ SnapTranslator.dict.zh_CN = {
         '设置加速模式为 %b',
 
     'filtered for %clr':
-        '用 %clr 过滤造型',
+        '用 %clr 过滤造型',//到双线位置没有找到
     'stack size':
         '堆栈大小',
     'frames':
-        '栈帧层数',
+        '栈帧层数',//
 
     'current %dates':
-        '当前的 %dates',
+        '当前 %dates',
     'year':
         '年份',
     'month':
@@ -877,7 +877,7 @@ SnapTranslator.dict.zh_CN = {
     'resolution':
         '分辨率',
     'video %vid on %self':
-        '视频 %vid 对 %self',
+        '视频 %vid 对 %self', //相对于 %self 的视频 %vid
     'snap':
         '快照',
     'motion':
@@ -909,9 +909,9 @@ SnapTranslator.dict.zh_CN = {
     '%fun of %n':
         '%fun %n',
     'pick random %n to %n':
-        '在 %n 到 %n 间随机选一个数',
+        '在 %n 到 %n 之间随机选一个数',
     '%b and %b':
-        '%b 且 %b',
+        '%b 与 %b',
     '%b or %b':
         '%b 或 %b',
     'not %b':
@@ -929,19 +929,19 @@ SnapTranslator.dict.zh_CN = {
     'world':
         '世界',
     'letter %idx of %s':
-        '第 %idx 个字符在文字 %s 中',
+        '获取第 %idx 个字符 %s ',
     'length of %s':
-        '%s 的长度',
+        '%s 的字符数',
     'unicode of %s':
-        '字符 %s 的Unicode码',
+        ' %s 字符转Unicode编码',
     'unicode %n as letter':
-        'Unicode码为 %n 的字符',
+        ' %n Unicode编码转字符',
     'is %s a %typ ?':
-        '%s 的类型是 %typ 吗？',
+        '判断 %s 类型是 %typ 吗？',
     'is %s identical to %s ?':
-        '%s 与 %s 是相同的？',
+        '%s 与 %s 是否相同？',
 
-    'type of %s':
+    'type of %s': //没找到在哪里
         '%s 的类型',
 
     // variables:
@@ -971,17 +971,19 @@ SnapTranslator.dict.zh_CN = {
     'list %exp':
         '列表 %exp',
     '%s in front of %l':
-        '%s 放在 %l 前面',
+        '%s 加入到列表 %l 第一行',
     'item %idx of %l':
-        '第 %idx 项 %l',
+        '第 %idx 项从列表 %l',
     'all but first of %l':
-        '%l 第一项以外',
+        '获取 %l 第一项以外',
     'length of %l':
         '%l 的长度',
     '%l contains %s':
-        '%l 含有 %s',
+        '列表 %l 包含有 %s',
     'thing':
-        '东西',
+        'thing',
+    'append %lists':
+        '合并列表 %lists',
     'add %s to %l':
         '将 %s 放到 %l 后面',
     'delete %ida of %l':
@@ -994,6 +996,8 @@ SnapTranslator.dict.zh_CN = {
         '从 %n 到 %n 的数字',
     'is %l empty?':
         '%l 为空?',
+    'index of %s in %l':
+        '%s 于 %l 第几项',
     'map %repRing over %l':
         '映射 %repRing ，来源 %l', 
     'keep items %predRing from %l':
@@ -1003,13 +1007,13 @@ SnapTranslator.dict.zh_CN = {
     'combine %l using %repRing':
         '合并 %l 方法为 %repRing',      
     'for each %upvar in %l %cla':
-        '逐个执行 %upvar 来自 %l %cla',
+        '逐个 %upvar 执行按照列表 %l %cla',
     'item':
-        '项',                                      
+        '条目',                                      
 
     // other
     'Make a block':
-        '制作积木',
+        '创造新的积木',
 
     // menus
     // snap menu
