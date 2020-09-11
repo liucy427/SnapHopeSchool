@@ -1,7 +1,7 @@
 /*
     lang-zh_CN.js
     Simplified Chinese translation for SNAP!
-    written by cccczl
+    written by Joy
     Copyright (C) 2016 by Jens Mönig
     This file is part of Snap!.
     Snap! is free software: you can redistribute it and/or modify
@@ -121,9 +121,9 @@ SnapTranslator.dict.zh_CN = {
     'language_name':
         '简体中文',
     'language_translator':
-        'cccczl',
+        'Joy',
     'translator_e-mail':
-        'cccczl@qq.com',
+        'liucy427@outlook.com',
     'last_changed':
         '2020-09-7',
 
