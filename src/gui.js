@@ -204,7 +204,7 @@ IDE_Morph.prototype.scriptsTexture = function () {
     return pic;
 };
 
-IDE_Morph.prototype.setDefaultDesign();
+IDE_Morph.prototype.setFlatDesign();
 
 // IDE_Morph instance creation:
 
@@ -1176,7 +1176,7 @@ IDE_Morph.prototype.createCategories = function () {
     // this.categories.getRenderColor = ScriptsMorph.prototype.getRenderColor;
 
     function addCategoryButton(category) {
-        var labelWidth = 75,
+        var labelWidth = 55,
             colors = [
                 myself.frameColor,
                 myself.frameColor.darker(MorphicPreferences.isFlat ? 5 : 50),
@@ -1220,11 +1220,11 @@ IDE_Morph.prototype.createCategories = function () {
         var buttonWidth = myself.categories.children[0].width(),
             buttonHeight = myself.categories.children[0].height(),
             border = 3,
-            rows =  Math.ceil((myself.categories.children.length) / 2),
+            rows =  myself.categories.children.length,
             xPadding = (200 // myself.logo.width()
                 - border
-                - buttonWidth * 2) / 3,
-            yPadding = 2,
+                - buttonWidth) / 3,
+            yPadding = 1,
             l = myself.categories.left(),
             t = myself.categories.top(),
             i = 0,
@@ -1233,10 +1233,10 @@ IDE_Morph.prototype.createCategories = function () {
 
         myself.categories.children.forEach(button => {
             i += 1;
-            row = Math.ceil(i / 2);
-            col = 2 - (i % 2);
+            row = i;
+            col = 1;
             button.setPosition(new Point(
-                l + (col * xPadding + ((col - 1) * buttonWidth)),
+                10,
                 t + (row * yPadding + ((row - 1) * buttonHeight) + border)
             ));
         });
