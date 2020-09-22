@@ -262,7 +262,7 @@ IDE_Morph.prototype.init = function (isAutoFill) {
     this.hasChangedMedia = false;
 
     this.isAnimating = true;
-    this.paletteWidth = 200; // initially same as logo width
+    this.paletteWidth = 280;
     this.stageRatio = 1; // for IDE animations, e.g. when zooming
 
 	this.wasSingleStepping = false; // for toggling to and from app mode
@@ -727,7 +727,7 @@ IDE_Morph.prototype.createLogo = function () {
     };
 
     this.logo.color = BLACK;
-    this.logo.setExtent(new Point(200, 28)); // dimensions are fixed
+    this.logo.setExtent(new Point(200, 40)); // dimensions are fixed  wi, change icon's size 
     this.add(this.logo);
 };
 
@@ -1176,7 +1176,7 @@ IDE_Morph.prototype.createCategories = function () {
     // this.categories.getRenderColor = ScriptsMorph.prototype.getRenderColor;
 
     function addCategoryButton(category) {
-        var labelWidth = 55,
+        var labelWidth = 20,
             colors = [
                 myself.frameColor,
                 myself.frameColor.darker(MorphicPreferences.isFlat ? 5 : 50),
@@ -1202,8 +1202,9 @@ IDE_Morph.prototype.createCategories = function () {
             true // has preview
         );
 
-        button.corner = 8;
-        button.padding = 0;
+        button.corner = 10;    //the width of the colored section
+        button.fontSize = 14
+        button.padding = 15;
         button.labelShadowOffset = new Point(-1, -1);
         button.labelShadowColor = colors[1];
         button.labelColor = myself.buttonLabelColor;
@@ -1902,13 +1903,13 @@ IDE_Morph.prototype.fixLayout = function (situation) {
         // categories
         this.categories.setLeft(this.logo.left());
         this.categories.setTop(this.logo.bottom());
-        this.categories.setWidth(this.paletteWidth);
+        this.categories.setWidth(this.categories.children[0].width() + this.categories.children[0].padding + this.paletteWidth);
     }
 
     // palette
-    this.palette.setLeft(this.logo.left());
-    this.palette.setTop(this.categories.bottom());
-    this.palette.setHeight(this.bottom() - this.palette.top());
+    this.palette.setLeft(this.categories.right() - this.paletteWidth);
+    this.palette.setTop(this.categories.top());
+    this.palette.setHeight(this.bottom());
     this.palette.setWidth(this.paletteWidth);
 
     if (situation !== 'refreshPalette') {
@@ -1958,11 +1959,11 @@ IDE_Morph.prototype.fixLayout = function (situation) {
         }
 
         // spriteBar
-        this.spriteBar.setLeft(this.paletteWidth + padding);
+        this.spriteBar.setLeft(this.palette.right() + padding);
         this.spriteBar.setTop(this.logo.bottom() + padding);
         this.spriteBar.setExtent(new Point(
             Math.max(0, this.stage.left() - padding - this.spriteBar.left()),
-            this.categories.bottom() - this.spriteBar.top() - padding - 8
+            180 - this.spriteBar.top() - padding - 8
         ));
         this.spriteBar.fixLayout();
 
