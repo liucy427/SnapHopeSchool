@@ -1536,6 +1536,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
         () => this.currentTab === 'scripts' // query
     );
     tab.padding = 5;
+    tab.fontSize = 14
     tab.corner = tabCorner;
     tab.edge = 1;
     tab.labelShadowOffset = new Point(-1, -1);
@@ -1565,7 +1566,8 @@ IDE_Morph.prototype.createSpriteBar = function () {
         ),
         () => this.currentTab === 'costumes' // query
     );
-    tab.padding = 3;
+    tab.padding = 5;
+    tab.fontSize = 14
     tab.corner = tabCorner;
     tab.edge = 1;
     tab.labelShadowOffset = new Point(-1, -1);
@@ -1581,7 +1583,8 @@ IDE_Morph.prototype.createSpriteBar = function () {
         localize('Sounds'), // label
         () => this.currentTab === 'sounds' // query
     );
-    tab.padding = 3;
+    tab.padding = 5;
+    tab.fontSize = 14
     tab.corner = tabCorner;
     tab.edge = 1;
     tab.labelShadowOffset = new Point(-1, -1);
@@ -1969,7 +1972,7 @@ IDE_Morph.prototype.fixLayout = function (situation) {
         this.spriteBar.setTop(this.logo.bottom() + padding);
         this.spriteBar.setExtent(new Point(
             Math.max(0, this.stage.left() - padding - this.spriteBar.left()),
-            180 - this.spriteBar.top() - padding - 8
+            160 - this.spriteBar.top() - padding - 8
         ));
         this.spriteBar.fixLayout();
 

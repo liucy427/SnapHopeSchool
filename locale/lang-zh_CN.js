@@ -190,7 +190,7 @@ SnapTranslator.dict.zh_CN = {
     'add a new sprite':
         '添加角色',
     'add a new Turtle sprite':
-        '添加一个海龟角色',
+        '添加一个默认角色',
     'paint a new sprite':
         '绘制一个角色',
     'take a camera snapshot and\nimport it as a new sprite':
@@ -1939,7 +1939,7 @@ SnapTranslator.dict.zh_CN = {
 
     // costumes
     'Turtle':
-        '海龟',
+        '默认',
     'Empty':
         '空白',
 
@@ -2215,6 +2215,10 @@ SnapTranslator.dict.zh_CN = {
     'Vector':
         '矢量',
     'Bitmap':
-        '位图'        
+        '位图',
+        
+    //新增
+    "Are you sure you want to leave?":
+        '你确定要退出吗'
 
 };
