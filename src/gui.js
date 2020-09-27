@@ -204,7 +204,7 @@ IDE_Morph.prototype.scriptsTexture = function () {
     return pic;
 };
 
-IDE_Morph.prototype.setDefaultDesign();
+IDE_Morph.prototype.setFlatDesign();
 
 // IDE_Morph instance creation:
 
@@ -262,7 +262,7 @@ IDE_Morph.prototype.init = function (isAutoFill) {
     this.hasChangedMedia = false;
 
     this.isAnimating = true;
-    this.paletteWidth = 200; // initially same as logo width
+    this.paletteWidth = 250;
     this.stageRatio = 1; // for IDE animations, e.g. when zooming
 
 	this.wasSingleStepping = false; // for toggling to and from app mode
@@ -284,7 +284,7 @@ IDE_Morph.prototype.openIn = function (world) {
 
     function initUser(username) {
         sessionStorage.username = username;
-        myself.controlBar.cloudButton.refresh();
+        // myself.controlBar.cloudButton.refresh();
         if (username) {
             myself.source = 'cloud';
             if (!myself.cloud.verified) {
@@ -618,8 +618,8 @@ IDE_Morph.prototype.buildPanes = function () {
     this.createStage();
     this.createSpriteBar();
     this.createSpriteEditor();
-    this.createCorralBar();
-    this.createCorral();
+    this.createCorralBar();   //role area
+    this.createCorral();    //background area
 };
 
 IDE_Morph.prototype.createLogo = function () {
@@ -727,7 +727,7 @@ IDE_Morph.prototype.createLogo = function () {
     };
 
     this.logo.color = BLACK;
-    this.logo.setExtent(new Point(200, 28)); // dimensions are fixed
+    this.logo.setExtent(new Point(200, 40)); // dimensions are fixed  wi, change icon's size 
     this.add(this.logo);
 };
 
@@ -776,8 +776,8 @@ IDE_Morph.prototype.createControlBar = function () {
         this, // the IDE is the target
         'toggleStageSize',
         [
-            new SymbolMorph('smallStage', 14),
-            new SymbolMorph('normalStage', 14)
+            new SymbolMorph('smallStage', 20),
+            new SymbolMorph('normalStage', 20)
         ],
         () => this.isSmallStage // query
     );
@@ -808,8 +808,8 @@ IDE_Morph.prototype.createControlBar = function () {
         this, // the IDE is the target
         'toggleAppMode',
         [
-            new SymbolMorph('fullScreen', 14),
-            new SymbolMorph('normalScreen', 14)
+            new SymbolMorph('fullScreen', 20),
+            new SymbolMorph('normalScreen', 20)
         ],
         () => this.isAppMode // query
     );
@@ -838,8 +838,8 @@ IDE_Morph.prototype.createControlBar = function () {
         this, // the IDE is the target
         'toggleSingleStepping',
         [
-            new SymbolMorph('footprints', 16),
-            new SymbolMorph('footprints', 16)
+            new SymbolMorph('footprints', 20),
+            new SymbolMorph('footprints', 20)
         ],
         () => Process.prototype.enableSingleStepping // query
     );
@@ -867,8 +867,8 @@ IDE_Morph.prototype.createControlBar = function () {
         this, // the IDE is the target
         'stopAllScripts',
         [
-            new SymbolMorph('octagon', 14),
-            new SymbolMorph('square', 14)
+            new SymbolMorph('octagon', 20),
+            new SymbolMorph('square', 20)
         ],
         () => this.stage ? // query
                 myself.stage.enableCustomHatBlocks &&
@@ -903,8 +903,8 @@ IDE_Morph.prototype.createControlBar = function () {
         this, // the IDE is the target
         'togglePauseResume',
         [
-            new SymbolMorph('pause', 12),
-            new SymbolMorph('pointRight', 14)
+            new SymbolMorph('pause', 19),
+            new SymbolMorph('pointRight', 20)
         ],
         () => this.isPaused() // query
     );
@@ -933,7 +933,7 @@ IDE_Morph.prototype.createControlBar = function () {
     button = new PushButtonMorph(
         this,
         'pressStart',
-        new SymbolMorph('flag', 14)
+        new SymbolMorph('flag', 20)
     );
     button.corner = 12;
     button.color = colors[0];
@@ -978,7 +978,7 @@ IDE_Morph.prototype.createControlBar = function () {
     button = new PushButtonMorph(
         this,
         'projectMenu',
-        new SymbolMorph('file', 14)
+        new SymbolMorph('file', 20)
         //'\u270E'
     );
     button.corner = 12;
@@ -1001,7 +1001,7 @@ IDE_Morph.prototype.createControlBar = function () {
     button = new PushButtonMorph(
         this,
         'settingsMenu',
-        new SymbolMorph('gears', 14)
+        new SymbolMorph('gears', 20)
         //'\u2699'
     );
     button.corner = 12;
@@ -1020,7 +1020,7 @@ IDE_Morph.prototype.createControlBar = function () {
     this.controlBar.add(settingsButton);
     this.controlBar.settingsButton = settingsButton; // for menu positioning
 
-    // cloudButton
+    cloudButton
     button = new ToggleButtonMorph(
         null, //colors,
         this, // the IDE is the target
@@ -1047,8 +1047,8 @@ IDE_Morph.prototype.createControlBar = function () {
     button.fixLayout();
     button.refresh();
     cloudButton = button;
-    this.controlBar.add(cloudButton);
-    this.controlBar.cloudButton = cloudButton; // for menu positioning & refresh
+    // this.controlBar.add(cloudButton);
+    // this.controlBar.cloudButton = cloudButton; // for menu positioning & refresh
 
     this.controlBar.fixLayout = function () {
         x = this.right() - padding;
@@ -1082,11 +1082,12 @@ IDE_Morph.prototype.createControlBar = function () {
         settingsButton.setCenter(myself.controlBar.center());
         settingsButton.setLeft(this.left());
 
-        cloudButton.setCenter(myself.controlBar.center());
-        cloudButton.setRight(settingsButton.left() - padding);
+        // cloudButton.setCenter(myself.controlBar.center());
+        // cloudButton.setRight(settingsButton.left() - padding);
 
         projectButton.setCenter(myself.controlBar.center());
-        projectButton.setRight(cloudButton.left() - padding);
+        // projectButton.setRight(cloudButton.left() - padding);
+        projectButton.setRight(settingsButton.left() - padding);
 
         this.refreshSlider();
         this.updateLabel();
@@ -1175,14 +1176,19 @@ IDE_Morph.prototype.createCategories = function () {
     this.categories.bounds.setWidth(this.paletteWidth);
     // this.categories.getRenderColor = ScriptsMorph.prototype.getRenderColor;
 
-    function addCategoryButton(category) {
-        var labelWidth = 75,
+    function addCategoryButton(category, language) {
+        var labelWidth = 55,
             colors = [
                 myself.frameColor,
                 myself.frameColor.darker(MorphicPreferences.isFlat ? 5 : 50),
                 SpriteMorph.prototype.blockColor[category]
             ],
             button;
+        if (language == "zh_CN")
+        {
+            labelWidth = 20
+        }
+
 
         button = new ToggleButtonMorph(
             colors,
@@ -1202,8 +1208,9 @@ IDE_Morph.prototype.createCategories = function () {
             true // has preview
         );
 
-        button.corner = 8;
-        button.padding = 0;
+        button.corner = 10;    //the width of the colored section
+        button.fontSize = 14
+        button.padding = 15;
         button.labelShadowOffset = new Point(-1, -1);
         button.labelShadowColor = colors[1];
         button.labelColor = myself.buttonLabelColor;
@@ -1220,11 +1227,11 @@ IDE_Morph.prototype.createCategories = function () {
         var buttonWidth = myself.categories.children[0].width(),
             buttonHeight = myself.categories.children[0].height(),
             border = 3,
-            rows =  Math.ceil((myself.categories.children.length) / 2),
+            rows =  myself.categories.children.length,
             xPadding = (200 // myself.logo.width()
                 - border
-                - buttonWidth * 2) / 3,
-            yPadding = 2,
+                - buttonWidth) / 3,
+            yPadding = 1,
             l = myself.categories.left(),
             t = myself.categories.top(),
             i = 0,
@@ -1233,10 +1240,10 @@ IDE_Morph.prototype.createCategories = function () {
 
         myself.categories.children.forEach(button => {
             i += 1;
-            row = Math.ceil(i / 2);
-            col = 2 - (i % 2);
+            row = i;
+            col = 1;
             button.setPosition(new Point(
-                l + (col * xPadding + ((col - 1) * buttonWidth)),
+                10,
                 t + (row * yPadding + ((row - 1) * buttonHeight) + border)
             ));
         });
@@ -1250,7 +1257,7 @@ IDE_Morph.prototype.createCategories = function () {
 
     SpriteMorph.prototype.categories.forEach(cat => {
         if (!contains(['lists', 'other'], cat)) {
-            addCategoryButton(cat);
+            addCategoryButton(cat, this.userLanguage);
         }
     });
     fixCategoriesLayout();
@@ -1528,7 +1535,8 @@ IDE_Morph.prototype.createSpriteBar = function () {
         localize('Scripts'), // label
         () => this.currentTab === 'scripts' // query
     );
-    tab.padding = 3;
+    tab.padding = 5;
+    tab.fontSize = 14
     tab.corner = tabCorner;
     tab.edge = 1;
     tab.labelShadowOffset = new Point(-1, -1);
@@ -1558,7 +1566,8 @@ IDE_Morph.prototype.createSpriteBar = function () {
         ),
         () => this.currentTab === 'costumes' // query
     );
-    tab.padding = 3;
+    tab.padding = 5;
+    tab.fontSize = 14
     tab.corner = tabCorner;
     tab.edge = 1;
     tab.labelShadowOffset = new Point(-1, -1);
@@ -1574,7 +1583,8 @@ IDE_Morph.prototype.createSpriteBar = function () {
         localize('Sounds'), // label
         () => this.currentTab === 'sounds' // query
     );
-    tab.padding = 3;
+    tab.padding = 5;
+    tab.fontSize = 14
     tab.corner = tabCorner;
     tab.edge = 1;
     tab.labelShadowOffset = new Point(-1, -1);
@@ -1902,13 +1912,13 @@ IDE_Morph.prototype.fixLayout = function (situation) {
         // categories
         this.categories.setLeft(this.logo.left());
         this.categories.setTop(this.logo.bottom());
-        this.categories.setWidth(this.paletteWidth);
+        this.categories.setWidth(this.categories.children[0].width() + this.categories.children[0].padding + this.paletteWidth);
     }
 
     // palette
-    this.palette.setLeft(this.logo.left());
-    this.palette.setTop(this.categories.bottom());
-    this.palette.setHeight(this.bottom() - this.palette.top());
+    this.palette.setLeft(this.categories.right() - this.paletteWidth);
+    this.palette.setTop(this.categories.top());
+    this.palette.setHeight(this.bottom());
     this.palette.setWidth(this.paletteWidth);
 
     if (situation !== 'refreshPalette') {
@@ -1958,11 +1968,11 @@ IDE_Morph.prototype.fixLayout = function (situation) {
         }
 
         // spriteBar
-        this.spriteBar.setLeft(this.paletteWidth + padding);
+        this.spriteBar.setLeft(this.palette.right() + padding);
         this.spriteBar.setTop(this.logo.bottom() + padding);
         this.spriteBar.setExtent(new Point(
             Math.max(0, this.stage.left() - padding - this.spriteBar.left()),
-            this.categories.bottom() - this.spriteBar.top() - padding - 8
+            160 - this.spriteBar.top() - padding - 8
         ));
         this.spriteBar.fixLayout();
 
@@ -5277,7 +5287,7 @@ IDE_Morph.prototype.toggleAppMode = function (appMode) {
     var world = this.world(),
         elements = [
             this.logo,
-            this.controlBar.cloudButton,
+            // this.controlBar.cloudButton,
             this.controlBar.projectButton,
             this.controlBar.settingsButton,
             this.controlBar.steppingButton,
@@ -5822,7 +5832,7 @@ IDE_Morph.prototype.initializeCloud = function () {
             user.choice,
             (username, role, response) => {
                 sessionStorage.username = username;
-                this.controlBar.cloudButton.refresh();
+                // this.controlBar.cloudButton.refresh();
                 this.source = 'cloud';
                 if (!isNil(response.days_left)) {
                     var duration = response.days_left + ' day' +
@@ -5986,12 +5996,12 @@ IDE_Morph.prototype.logout = function () {
     this.cloud.logout(
         () => {
             delete(sessionStorage.username);
-            this.controlBar.cloudButton.refresh();
+            // this.controlBar.cloudButton.refresh();
             this.showMessage('disconnected.', 2);
         },
         () => {
             delete(sessionStorage.username);
-            this.controlBar.cloudButton.refresh();
+            // this.controlBar.cloudButton.refresh();
             this.showMessage('disconnected.', 2);
         }
     );
