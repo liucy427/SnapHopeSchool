@@ -3344,19 +3344,19 @@ IDE_Morph.prototype.settingsMenu = function () {
         'check to rasterize\nSVGs on import',
         true
     );
-    addPreference(
-        'Flat design',
-        () => {
-            if (MorphicPreferences.isFlat) {
-                return this.defaultDesign();
-            }
-            this.flatDesign();
-        },
-        MorphicPreferences.isFlat,
-        'uncheck for default\nGUI design',
-        'check for alternative\nGUI design',
-        false
-    );
+    // addPreference(
+    //     'Flat design',
+    //     () => {
+    //         if (MorphicPreferences.isFlat) {
+    //             return this.defaultDesign();
+    //         }
+    //         this.flatDesign();
+    //     },
+    //     MorphicPreferences.isFlat,
+    //     'uncheck for default\nGUI design',
+    //     'check for alternative\nGUI design',
+    //     false
+    // );
     addPreference(
         'Nested auto-wrapping',
         () => {
