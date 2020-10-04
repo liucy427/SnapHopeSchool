@@ -677,7 +677,12 @@ ToggleButtonMorph.prototype.fixLayout = function () {
             lw;
 
         this.updateLabelColors();
-        lw = Math.max(this.label.width(), this.labelMinExtent.x);
+        if(contains(['Motion', 'Control', 'Looks', 'Sensing', 'Sound', 'Operators',  'Pen', 'Variables', 'Lists', 'Other'],this.label.text)){
+            lw = 35;
+        }
+        else{
+            lw = Math.max(this.label.width(), this.labelMinExtent.x);
+        }
         this.bounds.setWidth(this.minWidth ?
                 Math.max(this.minWidth, lw) + padding
                     : lw + padding
@@ -697,7 +702,7 @@ ToggleButtonMorph.prototype.fixLayout = function () {
                     + this.outline
                     + this.edge
                     + this.corner
-                    + this.padding
+                    + this.padding/2
             );
         }
     }
