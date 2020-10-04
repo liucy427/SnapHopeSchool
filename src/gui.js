@@ -78,7 +78,7 @@ Animation, BoxMorph, BlockEditorMorph, BlockDialogMorph, Note, ZERO, BLACK*/
 
 // Global stuff ////////////////////////////////////////////////////////
 
-modules.gui = '2020-August-08';
+modules.gui = '2020-September-01';
 
 // Declarations
 
@@ -3287,13 +3287,13 @@ IDE_Morph.prototype.settingsMenu = function () {
         'uncheck to use the input\ndialog in short form',
         'check to always show slot\ntypes in the input dialog'
     );
-    addPreference(
-        'Plain prototype labels',
-        'togglePlainPrototypeLabels',
-        BlockLabelPlaceHolderMorph.prototype.plainLabel,
-        'uncheck to always show (+) symbols\nin block prototype labels',
-        'check to hide (+) symbols\nin block prototype labels'
-    );
+    // addPreference(
+    //     'Plain prototype labels',
+    //     'togglePlainPrototypeLabels',
+    //     BlockLabelPlaceHolderMorph.prototype.plainLabel,
+    //     'uncheck to always show (+) symbols\nin block prototype labels',
+    //     'check to hide (+) symbols\nin block prototype labels'
+    // );
     addPreference(
         'Virtual keyboard',
         'toggleVirtualKeyboard',
@@ -3509,20 +3509,20 @@ IDE_Morph.prototype.settingsMenu = function () {
         'uncheck for round ends of lines',
         'check for flat ends of lines'
     );
-    addPreference(
-        'Codification support',
-        () => {
-            StageMorph.prototype.enableCodeMapping =
-                !StageMorph.prototype.enableCodeMapping;
-            this.currentSprite.blocksCache.variables = null;
-            this.currentSprite.paletteCache.variables = null;
-            this.refreshPalette();
-        },
-        StageMorph.prototype.enableCodeMapping,
-        'uncheck to disable\nblock to text mapping features',
-        'check for block\nto text mapping features',
-        false
-    );
+    // addPreference(
+    //     'Codification support',
+    //     () => {
+    //         StageMorph.prototype.enableCodeMapping =
+    //             !StageMorph.prototype.enableCodeMapping;
+    //         this.currentSprite.blocksCache.variables = null;
+    //         this.currentSprite.paletteCache.variables = null;
+    //         this.refreshPalette();
+    //     },
+    //     StageMorph.prototype.enableCodeMapping,
+    //     'uncheck to disable\nblock to text mapping features',
+    //     'check for block\nto text mapping features',
+    //     false
+    // );
     addPreference(
         'Inheritance support',
         () => {
@@ -5835,12 +5835,12 @@ IDE_Morph.prototype.initializeCloud = function () {
                 // this.controlBar.cloudButton.refresh();
                 this.source = 'cloud';
                 if (!isNil(response.days_left)) {
+                    var duration = response.days_left + ' day' +
+                        (response.days_left > 1 ? 's' : '');
                     new DialogBoxMorph().inform(
-                        'Unverified account: ' +
-                        response.days_left +
-                        ' days left',
+                        'Unverified account: ' + duration + ' left' +
                         'You are now logged in, and your account\n' +
-                        'is enabled for three days.\n' +
+                        'is enabled for ' + duration + '.\n' +
                         'Please use the verification link that\n' +
                         'was sent to your email address when you\n' +
                         'signed up.\n\n' +
@@ -5849,7 +5849,7 @@ IDE_Morph.prototype.initializeCloud = function () {
                         'cannot find it, please use the "Resend\n' +
                         'Verification Email..." option in the cloud\n' +
                         'menu.\n\n' +
-                        'You have ' + response.days_left + ' days left.',
+                        'You have ' + duration + ' left.',
                         world,
                         this.cloudIcon(null, new Color(0, 180, 0))
                     );
