@@ -31,6 +31,3 @@ make-variables.xml	Create variables	Create and manage global/sprite/script varia
 ~	~
 ~	~
 ~	~
-HummingbirdBlocks.xml	Hummingbird robotics	Control the Hummingbird robotics kit processor
-leap-library.xml	LEAP Motion controller	Report hand positions from LEAP Motion controller (leapmotion.com).
-
