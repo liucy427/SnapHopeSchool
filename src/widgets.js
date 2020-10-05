@@ -902,7 +902,7 @@ ToggleButtonMorph.prototype.createLabel = function () {
                 localize(this.labelString),
                 this.fontSize,
                 this.fontStyle,
-                true,
+                false,
                 false,
                 false,
                 shading ? this.labelShadowOffset : ZERO,

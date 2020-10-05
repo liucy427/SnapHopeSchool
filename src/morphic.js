@@ -1296,10 +1296,10 @@ Object.freeze(WHITE);
 var standardSettings = {
     minimumFontHeight: getMinimumFontHeight(), // browser settings
     globalFontFamily: '',
-    menuFontName: 'sans-serif',
+    menuFontName: 'Microsoft Yahei',
     menuFontSize: 12,
     bubbleHelpFontSize: 10,
-    prompterFontName: 'sans-serif',
+    prompterFontName: 'Microsoft Yahei',
     prompterFontSize: 12,
     prompterSliderSize: 10,
     handleSize: 15,
@@ -1308,7 +1308,7 @@ var standardSettings = {
     useSliderForInput: false,
     isTouchDevice: false, // turned on by touch events, don't set
     rasterizeSVGs: false,
-    isFlat: false,
+    isFlat: true,
     grabThreshold: 5,
     showHoles: false
 };
@@ -1328,7 +1328,7 @@ var touchScreenSettings = {
     useSliderForInput: false,
     isTouchDevice: true,
     rasterizeSVGs: false,
-    isFlat: false,
+    isFlat: true,
     grabThreshold: 5,
     showHoles: false
 };

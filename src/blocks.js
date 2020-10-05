@@ -260,7 +260,7 @@ SyntaxElementMorph.prototype.contrast = 65;
 SyntaxElementMorph.prototype.setScale = function (num) {
     var scale = Math.min(Math.max(num, 1), 25);
     this.scale = scale;
-    this.corner = 3 * scale;
+    this.corner = 6 * scale;
     this.rounding = 9 * scale;
     this.edge = scale;
     this.flatEdge = scale * 0.5;
@@ -275,7 +275,7 @@ SyntaxElementMorph.prototype.setScale = function (num) {
     this.cSlotPadding = 4 * scale;
     this.typeInPadding = scale;
     this.labelPadding = 4 * scale;
-    this.labelFontName = 'Verdana';
+    this.labelFontName = 'Microsoft Yahei';
     this.labelFontStyle = 'sans-serif';
     this.fontSize = 10 * scale;
     this.embossing = new Point(
@@ -1798,7 +1798,7 @@ SyntaxElementMorph.prototype.labelPart = function (spec) {
             spec, // text
             this.fontSize, // fontSize
             this.labelFontStyle, // fontStyle
-            true, // bold
+            false, // bold
             false, // italic
             false, // isNumeric
             MorphicPreferences.isFlat ?
@@ -8847,7 +8847,7 @@ InputSlotMorph.prototype.init = function (
             true
         );
 
-    contents.fontSize = this.fontSize;
+    contents.fontSize = this.fontSize * 0.9;
     contents.isShowingBlanks = true;
 
 	this.selectedBlock = null;
