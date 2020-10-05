@@ -2417,6 +2417,16 @@ IDE_Morph.prototype.applySavedSettings = function () {
         tableLines = this.getSetting('tableLines'),
         autoWrapping = this.getSetting('autowrapping');
 
+    if(design == null){
+        design = 'flat'
+        this.saveSetting('design', design)
+    }
+
+    if(language == null){
+        language = 'zh_CN'
+        this.saveSetting('language', language)
+    }
+
     // design
     if (design === 'flat') {
         this.setFlatDesign();
@@ -3344,19 +3354,19 @@ IDE_Morph.prototype.settingsMenu = function () {
         'check to rasterize\nSVGs on import',
         true
     );
-    // addPreference(
-    //     'Flat design',
-    //     () => {
-    //         if (MorphicPreferences.isFlat) {
-    //             return this.defaultDesign();
-    //         }
-    //         this.flatDesign();
-    //     },
-    //     MorphicPreferences.isFlat,
-    //     'uncheck for default\nGUI design',
-    //     'check for alternative\nGUI design',
-    //     false
-    // );
+    addPreference(
+        'Flat design',
+        () => {
+            if (MorphicPreferences.isFlat) {
+                return this.defaultDesign();
+            }
+            this.flatDesign();
+        },
+        MorphicPreferences.isFlat,
+        'uncheck for default\nGUI design',
+        'check for alternative\nGUI design',
+        false
+    );
     addPreference(
         'Nested auto-wrapping',
         () => {
