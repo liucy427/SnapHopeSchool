@@ -3287,13 +3287,13 @@ IDE_Morph.prototype.settingsMenu = function () {
         'uncheck to use the input\ndialog in short form',
         'check to always show slot\ntypes in the input dialog'
     );
-    addPreference(
-        'Plain prototype labels',
-        'togglePlainPrototypeLabels',
-        BlockLabelPlaceHolderMorph.prototype.plainLabel,
-        'uncheck to always show (+) symbols\nin block prototype labels',
-        'check to hide (+) symbols\nin block prototype labels'
-    );
+    // addPreference(
+    //     'Plain prototype labels',
+    //     'togglePlainPrototypeLabels',
+    //     BlockLabelPlaceHolderMorph.prototype.plainLabel,
+    //     'uncheck to always show (+) symbols\nin block prototype labels',
+    //     'check to hide (+) symbols\nin block prototype labels'
+    // );
     addPreference(
         'Virtual keyboard',
         'toggleVirtualKeyboard',
@@ -3509,20 +3509,20 @@ IDE_Morph.prototype.settingsMenu = function () {
         'uncheck for round ends of lines',
         'check for flat ends of lines'
     );
-    addPreference(
-        'Codification support',
-        () => {
-            StageMorph.prototype.enableCodeMapping =
-                !StageMorph.prototype.enableCodeMapping;
-            this.currentSprite.blocksCache.variables = null;
-            this.currentSprite.paletteCache.variables = null;
-            this.refreshPalette();
-        },
-        StageMorph.prototype.enableCodeMapping,
-        'uncheck to disable\nblock to text mapping features',
-        'check for block\nto text mapping features',
-        false
-    );
+    // addPreference(
+    //     'Codification support',
+    //     () => {
+    //         StageMorph.prototype.enableCodeMapping =
+    //             !StageMorph.prototype.enableCodeMapping;
+    //         this.currentSprite.blocksCache.variables = null;
+    //         this.currentSprite.paletteCache.variables = null;
+    //         this.refreshPalette();
+    //     },
+    //     StageMorph.prototype.enableCodeMapping,
+    //     'uncheck to disable\nblock to text mapping features',
+    //     'check for block\nto text mapping features',
+    //     false
+    // );
     addPreference(
         'Inheritance support',
         () => {

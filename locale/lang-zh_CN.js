@@ -1074,6 +1074,8 @@ SnapTranslator.dict.zh_CN = {
         '导出好了！',
     'Export blocks...':
         '导出积木…',
+    'save global custom block\ndefinitions as XML':
+        '以xml格式保存全局自定义积木',
     'show global custom block definitions as XML\nin a new browser window':
         '打开新窗口，以XML格式展示全局自制积木',
     'Unused blocks...':
@@ -1087,6 +1089,8 @@ SnapTranslator.dict.zh_CN = {
     'unused block(s) removed':
         '删掉了没用到的积木',
     'Export summary...':
+        '以HTML格式导出项目',
+    'save a summary\nof this project':
         '以HTML格式导出项目',
     'open a new browser browser window\n with a summary of this project':
         '打开新窗口，展示这个项目',
@@ -1247,6 +1251,8 @@ SnapTranslator.dict.zh_CN = {
         '语言…',
     'Zoom blocks...':
         '放大积木…',
+    'Fade blocks...':
+        '积木透明度…',
     'Stage size...':
         '舞台大小…',
     'Stage size':
@@ -1360,7 +1366,7 @@ SnapTranslator.dict.zh_CN = {
     'uncheck to allow\nscript reentrance':
         '允许脚本重入',
     'check to disallow\nscript reentrance':
-        '不允许脚本重入',
+        '不允许脚本死锁',
     'Prefer smooth animations':
         '动画尽可能平滑',
     'uncheck for greater speed\nat variable frame rates':
@@ -1531,7 +1537,9 @@ SnapTranslator.dict.zh_CN = {
     'delete':
         '删除',
     'script pic...':
-        '显示脚本图片…',
+        '保存脚本为图片…',
+    'save a picture\nof this script':
+        '将脚本保存为图片',
     'open a new window\nwith a picture of this script':
         '打开一个新窗口，\n显示这个脚本的图片',
     'script pic with result...':
@@ -1556,6 +1564,8 @@ SnapTranslator.dict.zh_CN = {
         '删除积木定义…',
     'duplicate block definition...':
         '复制积木定义…',
+    'export block definition...':
+        '导出积木',
     'edit...':
         '编辑…',
 
@@ -1684,6 +1694,24 @@ SnapTranslator.dict.zh_CN = {
     'monstrous (10x)':
         '最大 (10x)',
 
+    // Fade blocks
+    'Fade blocks':
+        '积木透明度',
+    'block-solid (0)' : 
+        '不透明 （0）',
+    'medium (50)' : 
+        '中等（50）',
+    'light (70)' : 
+        '明亮的（70）',
+    'shimmering (80)' : 
+        '闪烁的（80）',
+    'elegant (90)' : 
+        '简洁的（90）',
+    'subtle (95)' : 
+        '稀薄的（95）',
+    'text-only (100)' : 
+        '全透明（100）',
+
     // Project Manager
     'Untitled':
         '无名项目',
@@ -1698,7 +1726,9 @@ SnapTranslator.dict.zh_CN = {
     'Are you sure you want to delete':
         '你确定要删除',
     'rename...':
-        '改名为…',
+        '重命名…',
+    'rename all...':
+        '全部重命名…',
     'Open':
         '打开',
     'Cloud':
