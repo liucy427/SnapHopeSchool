@@ -637,7 +637,7 @@ IDE_Morph.prototype.createLogo = function () {
     // otherwise would be compromised by annoying browser security.
 
     // this.logo.texture = this.logoURL; // original code, commented out
-    this.logo.texture = "icon_hope_32.png";
+    this.logo.texture = "src/icon_hope_32.png";
     this.snapLogo = new Image();
     this.snapLogo.src = "data:image/png;base64," +
     // this.logo.texture = "data:image/png;base64," +
@@ -4093,7 +4093,7 @@ IDE_Morph.prototype.aboutSnap = function () {
     }
 
     // dlg.inform('About Snap', aboutTxt, world, this.snapLogo);
-    dlg.inform_2pic('About Snap', aboutTxt, world, this.logo.cachedTexture, this.snapLogo);
+    dlg.inform_2pic('About Snap!', aboutTxt, world, this.logo.cachedTexture, this.snapLogo);
     btn1 = dlg.buttons.children[0];
     translatorsBtn = dlg.addButton(
         () => {
