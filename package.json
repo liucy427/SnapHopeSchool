@@ -1,0 +1,17 @@
+{
+    "name" : "SnapHopeSchool",
+    "version" : "1.0.1",
+    "main" : "index.html",
+    "window":{
+        "title": "SnapHopeSchool",
+        "icon": "src/icon_hope_128.png",
+        "resizable": true,
+        "frame": true,
+        "position": "center",
+        "width": 960,
+        "height": 640,
+        "min_width": 960,
+        "min_height": 640
+    },
+    "chromium-args" :"-allow-file-access-from-files"
+}
