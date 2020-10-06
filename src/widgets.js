@@ -1529,6 +1529,7 @@ DialogBoxMorph.prototype.init = function (target, action, environment) {
     this.labelString = null;
     this.label = null;
     this.head = null;
+    this.head2 = null;
     this.body = null;
     this.buttons = null;
 
@@ -1573,6 +1574,43 @@ DialogBoxMorph.prototype.inform = function (
     this.labelString = title;
     this.createLabel();
     if (pic) {this.setPicture(pic); }
+    if (textString) {
+        this.addBody(txt);
+    }
+    this.addButton('ok', 'OK');
+    this.fixLayout();
+    this.popUp(world);
+};
+
+DialogBoxMorph.prototype.inform_2pic = function (
+    title,
+    textString,
+    world,
+    pic,
+    pic2
+) {
+    var txt = new TextMorph(
+        textString,
+        this.fontSize,
+        this.fontStyle,
+        true,
+        false,
+        'center',
+        null,
+        null,
+        MorphicPreferences.isFlat ? null : new Point(1, 1),
+        WHITE
+    );
+
+    if (!this.key) {
+        this.key = 'inform' + title + textString;
+    }
+
+    txt.enableLinks = true; // let the user click on URLs to open in new tab
+    this.labelString = title;
+    this.createLabel();
+    if (pic) {this.setPicture(pic); }
+    if (pic2) {this.setPicture2(pic2);}
     if (textString) {
         this.addBody(txt);
     }
@@ -2436,12 +2474,34 @@ DialogBoxMorph.prototype.setPicture = function (aMorphOrCanvas) {
     this.addHead(morph);
 };
 
+DialogBoxMorph.prototype.setPicture2 = function (aMorphOrCanvas) {
+    var morph;
+    if (aMorphOrCanvas instanceof Morph) {
+        morph = aMorphOrCanvas;
+    } else {
+        morph = new Morph();
+        morph.isCachingImage = true;
+        morph.cachedImage = aMorphOrCanvas;
+        morph.bounds.setWidth(aMorphOrCanvas.width);
+        morph.bounds.setHeight(aMorphOrCanvas.height);
+    }
+    this.addHead2(morph);
+};
+
 DialogBoxMorph.prototype.addHead = function (aMorph) {
     if (this.head) {
         this.head.destroy();
     }
     this.head = aMorph;
     this.add(this.head);
+};
+
+DialogBoxMorph.prototype.addHead2 = function (aMorph) {
+    if (this.head2) {
+        this.head2.destroy();
+    }
+    this.head2 = aMorph;
+    this.add(this.head2);
 };
 
 DialogBoxMorph.prototype.addBody = function (aMorph) {
@@ -2471,6 +2531,19 @@ DialogBoxMorph.prototype.fixLayout = function () {
         );
     }
 
+    if (this.head2) {
+        this.head2.setPosition(this.head.topRight().add(new Point(
+            this.padding,
+            0
+        )));
+        this.bounds.setWidth(this.head2.width() + this.padding * 2);
+        this.bounds.setHeight(
+            this.head2.height()
+                + this.padding * 2
+                + th
+        );
+    }
+
     if (this.body) {
         if (this.head) {
             this.body.setPosition(this.head.bottomLeft().add(new Point(
@@ -2491,6 +2564,13 @@ DialogBoxMorph.prototype.fixLayout = function () {
                 this.left()
                     + Math.round((w - this.head.width()) / 2)
             );
+            if (this.head2) {
+                this.head.setLeft(
+                    this.left()
+                        + Math.round((w - this.head.width() - this.head2.width() - this.padding * 2) / 2));
+                this.head2.setLeft(this.left() + Math.round((w - this.head.width() - this.head2.width()) / 2) 
+                    + this.head.width() + this.padding);
+            }
             this.body.setLeft(
                 this.left()
                     + Math.round((w - this.body.width()) / 2)

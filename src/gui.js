@@ -311,15 +311,15 @@ IDE_Morph.prototype.openIn = function (world) {
     world.userMenu = this.userMenu;
 
     // override SnapCloud's user message with Morphic
-    this.cloud.message = (string) => {
-        var m = new MenuMorph(null, string),
-            intervalHandle;
-        m.popUpCenteredInWorld(world);
-        intervalHandle = setInterval(() => {
-            m.destroy();
-            clearInterval(intervalHandle);
-        }, 2000);
-    };
+    // this.cloud.message = (string) => {
+    //     var m = new MenuMorph(null, string),
+    //         intervalHandle;
+    //     m.popUpCenteredInWorld(world);
+    //     intervalHandle = setInterval(() => {
+    //         m.destroy();
+    //         clearInterval(intervalHandle);
+    //     }, 2000);
+    // };
 
     // prevent non-DialogBoxMorphs from being dropped
     // onto the World in user-mode
@@ -637,7 +637,10 @@ IDE_Morph.prototype.createLogo = function () {
     // otherwise would be compromised by annoying browser security.
 
     // this.logo.texture = this.logoURL; // original code, commented out
-    this.logo.texture = "data:image/png;base64," +
+    this.logo.texture = "src/icon_hope_32.png";
+    this.snapLogo = new Image();
+    this.snapLogo.src = "data:image/png;base64," +
+    // this.logo.texture = "data:image/png;base64," +
         "iVBORw0KGgoAAAANSUhEUgAAACwAAAAYCAYAAACBbx+6AAAKiklEQVRYR5VXe3BU5RX/" +
         "ne+7924SwiOEJJvwUCAgCZFBEtRatIlVlATLIwlFsCgdeYWICu1MfbKUabVVtBoDQlUc" +
         "FCubEIpAAEUTrGhFGIXAAjZCFdhNQiTkQbK7997vdO7SREAo9P5zZ77HOb9zzu87D8JV" +
@@ -2417,6 +2420,16 @@ IDE_Morph.prototype.applySavedSettings = function () {
         tableLines = this.getSetting('tableLines'),
         autoWrapping = this.getSetting('autowrapping');
 
+    if(design == null){
+        design = 'flat'
+        this.saveSetting('design', design)
+    }
+
+    if(language == null){
+        language = 'zh_CN'
+        this.saveSetting('language', language)
+    }
+
     // design
     if (design === 'flat') {
         this.setFlatDesign();
@@ -2885,7 +2898,7 @@ IDE_Morph.prototype.snapMenu = function () {
         world = this.world();
 
     menu = new MenuMorph(this);
-    menu.addItem('About...', 'aboutSnap');
+    menu.addItem('About Snap!', 'aboutSnap');
     menu.addLine();
     menu.addItem(
         'Reference manual',
@@ -3344,19 +3357,19 @@ IDE_Morph.prototype.settingsMenu = function () {
         'check to rasterize\nSVGs on import',
         true
     );
-    // addPreference(
-    //     'Flat design',
-    //     () => {
-    //         if (MorphicPreferences.isFlat) {
-    //             return this.defaultDesign();
-    //         }
-    //         this.flatDesign();
-    //     },
-    //     MorphicPreferences.isFlat,
-    //     'uncheck for default\nGUI design',
-    //     'check for alternative\nGUI design',
-    //     false
-    // );
+    addPreference(
+        'Flat design',
+        () => {
+            if (MorphicPreferences.isFlat) {
+                return this.defaultDesign();
+            }
+            this.flatDesign();
+        },
+        MorphicPreferences.isFlat,
+        'uncheck for default\nGUI design',
+        'check for alternative\nGUI design',
+        false
+    );
     addPreference(
         'Nested auto-wrapping',
         () => {
@@ -4079,7 +4092,8 @@ IDE_Morph.prototype.aboutSnap = function () {
         return tm;
     }
 
-    dlg.inform('About Snap', aboutTxt, world, this.logo.cachedTexture);
+    // dlg.inform('About Snap', aboutTxt, world, this.snapLogo);
+    dlg.inform_2pic('About Snap!', aboutTxt, world, this.logo.cachedTexture, this.snapLogo);
     btn1 = dlg.buttons.children[0];
     translatorsBtn = dlg.addButton(
         () => {
