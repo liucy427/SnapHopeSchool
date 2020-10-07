@@ -121,9 +121,9 @@ SnapTranslator.dict.zh_CN = {
     'language_name':
         '简体中文',
     'language_translator':
-        'Joy',
+        'JoyLiu',
     'translator_e-mail':
-        'liucy427@outlook.com',
+        'liuchunying995@gmail.com',
     'last_changed':
         '2020-09-7',
 
@@ -1898,7 +1898,7 @@ SnapTranslator.dict.zh_CN = {
     'Modules...':
         '模块…',
     'Credits...':
-        '光荣榜…',
+        '贡献榜…',
     'Translators...':
         '翻译者…',
     'License':
@@ -2249,6 +2249,17 @@ SnapTranslator.dict.zh_CN = {
         
     //新增
     "Are you sure you want to leave?":
-        '你确定要退出吗'
+        '你确定要退出吗',
+    'clone':
+        '克隆',
+    'release':
+        '释放',
+    'rotate':
+        '选转',
+    'pivot':
+        '中心点',
+    'stick to':
+        '关联',
+    
 
 };
