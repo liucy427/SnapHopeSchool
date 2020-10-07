@@ -1817,6 +1817,10 @@ IDE_Morph.prototype.createCorral = function () {
     this.corral.stageIcon.isDraggable = false;
     this.corral.add(this.corral.stageIcon);
 
+    this.corral.sepeLine = new Morph();
+    this.corral.sepeLine.color = this.frameColor;
+    this.corral.add(this.corral.sepeLine);
+
     frame = new ScrollFrameMorph(null, null, this.sliderColor);
     frame.acceptsDrops = false;
     frame.contents.acceptsDrops = false;
@@ -1840,7 +1844,10 @@ IDE_Morph.prototype.createCorral = function () {
     this.corral.fixLayout = function () {
         this.stageIcon.setCenter(this.center());
         this.stageIcon.setLeft(this.left() + padding);
-        this.frame.setLeft(this.stageIcon.right() + padding);
+        this.sepeLine.setWidth(padding/3);
+        this.sepeLine.setHeight(this.height());
+        this.sepeLine.setLeft(this.stageIcon.right());
+        this.frame.setLeft(this.sepeLine.right());
         this.frame.setExtent(new Point(
             this.right() - this.frame.left(),
             this.height()
@@ -4025,6 +4032,7 @@ IDE_Morph.prototype.aboutSnap = function () {
         + 'Get in touch with us, we\'ll make it work.';
 
     creditsTxt = localize('Contributors')
+        + '\n\nJoyLiu: Modify the interface as Chinese version, '
         + '\n\nNathan Dinsmore: Saving/Loading, Snap-Logo Design, '
         + '\ncountless bugfixes and optimizations'
         + '\nMichael Ball: Time/Date UI, Library Import Dialog,'
