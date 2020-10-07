@@ -604,6 +604,7 @@ IDE_Morph.prototype.openIn = function (world) {
         }
     }
 
+    this.newProject();
     world.keyboardFocus = this.stage;
     this.warnAboutIE();
 };
@@ -2426,6 +2427,11 @@ IDE_Morph.prototype.applySavedSettings = function () {
         tables = this.getSetting('tables'),
         tableLines = this.getSetting('tableLines'),
         autoWrapping = this.getSetting('autowrapping');
+        snapjr = this.getSetting('snapjr');
+    
+    if (snapjr){
+        MorphicPreferences.isSnapJr = true;
+    }
 
     if(design == null){
         design = 'flat'
@@ -3584,6 +3590,22 @@ IDE_Morph.prototype.settingsMenu = function () {
         'check to enable\ndropping commands in all rings',
         true
     );
+
+    menu.addLine();
+    addPreference(
+        'Start a Snap Jr. session',
+        () => {
+            MorphicPreferences.isSnapJr = !MorphicPreferences.isSnapJr;
+            if (!MorphicPreferences.isSnapJr) {
+                return this.cancelSnapJr();
+            }
+            this.startSnapJr();
+        },
+        MorphicPreferences.isSnapJr,
+        'uncheck for cancel Snap in an\nicon-based blocks mode',
+        'check for Start Snap in an\nicon-based blocks mode',
+        false
+    );
     menu.popup(world, pos);
 };
 
@@ -4260,6 +4282,9 @@ IDE_Morph.prototype.newProject = function () {
     this.createCorral();
     this.selectSprite(this.stage.children[0]);
     this.fixLayout();
+    if (MorphicPreferences.isSnapJr) {
+        this.startSnapJr();
+    }
 };
 
 IDE_Morph.prototype.save = function () {
@@ -6428,6 +6453,32 @@ IDE_Morph.prototype.warnAboutIE = function () {
 IDE_Morph.prototype.isIE = function () {
     var ua = navigator.userAgent;
     return ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+};
+
+// SnapJr.
+// start Children's model
+IDE_Morph.prototype.startSnapJr = function () {
+    var myself = this;
+    MorphicPreferences.isSnapJr = true;
+    this.saveSetting('snapjr', 'snapjr')
+    this.showMessage(localize('Loading Snap Jr.'));
+    if (location.protocol === 'file:') {
+        this.importLocalFile();
+        return;
+    }
+    this.getURL(
+        'Examples/SnapJunior.xml',
+        function (contents) {
+            myself.droppedText(contents, 'Snap Jr.');
+        }
+    );
+};
+
+// cancel Children's model
+IDE_Morph.prototype.cancelSnapJr = function () {
+    MorphicPreferences.isSnapJr = false;
+    this.removeSetting('snapjr');
+    this.createNewProject();
 };
 
 // ProjectDialogMorph ////////////////////////////////////////////////////

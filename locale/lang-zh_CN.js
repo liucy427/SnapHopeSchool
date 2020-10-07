@@ -2260,6 +2260,12 @@ SnapTranslator.dict.zh_CN = {
         '中心点',
     'stick to':
         '关联',
+    'Start a Snap Jr. session':
+        '幼儿模式',
+    'uncheck for cancel Snap in an\nicon-based blocks mode':
+        '取消少儿模式',
+    'check for Start Snap in an\nicon-based blocks mode':
+        '切换少儿模式'
     
 
 };
