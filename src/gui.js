@@ -604,6 +604,7 @@ IDE_Morph.prototype.openIn = function (world) {
         }
     }
 
+    this.newProject();
     world.keyboardFocus = this.stage;
     this.warnAboutIE();
 };
@@ -1817,6 +1818,10 @@ IDE_Morph.prototype.createCorral = function () {
     this.corral.stageIcon.isDraggable = false;
     this.corral.add(this.corral.stageIcon);
 
+    this.corral.sepeLine = new Morph();
+    this.corral.sepeLine.color = this.frameColor;
+    this.corral.add(this.corral.sepeLine);
+
     frame = new ScrollFrameMorph(null, null, this.sliderColor);
     frame.acceptsDrops = false;
     frame.contents.acceptsDrops = false;
@@ -1840,7 +1845,10 @@ IDE_Morph.prototype.createCorral = function () {
     this.corral.fixLayout = function () {
         this.stageIcon.setCenter(this.center());
         this.stageIcon.setLeft(this.left() + padding);
-        this.frame.setLeft(this.stageIcon.right() + padding);
+        this.sepeLine.setWidth(padding/3);
+        this.sepeLine.setHeight(this.height());
+        this.sepeLine.setLeft(this.stageIcon.right());
+        this.frame.setLeft(this.sepeLine.right());
         this.frame.setExtent(new Point(
             this.right() - this.frame.left(),
             this.height()
@@ -2419,6 +2427,11 @@ IDE_Morph.prototype.applySavedSettings = function () {
         tables = this.getSetting('tables'),
         tableLines = this.getSetting('tableLines'),
         autoWrapping = this.getSetting('autowrapping');
+        snapjr = this.getSetting('snapjr');
+    
+    if (snapjr){
+        MorphicPreferences.isSnapJr = true;
+    }
 
     if(design == null){
         design = 'flat'
@@ -3577,6 +3590,22 @@ IDE_Morph.prototype.settingsMenu = function () {
         'check to enable\ndropping commands in all rings',
         true
     );
+
+    menu.addLine();
+    addPreference(
+        'Start a Snap Jr. session',
+        () => {
+            MorphicPreferences.isSnapJr = !MorphicPreferences.isSnapJr;
+            if (!MorphicPreferences.isSnapJr) {
+                return this.cancelSnapJr();
+            }
+            this.startSnapJr();
+        },
+        MorphicPreferences.isSnapJr,
+        'uncheck for cancel Snap in an\nicon-based blocks mode',
+        'check for Start Snap in an\nicon-based blocks mode',
+        false
+    );
     menu.popup(world, pos);
 };
 
@@ -4025,6 +4054,7 @@ IDE_Morph.prototype.aboutSnap = function () {
         + 'Get in touch with us, we\'ll make it work.';
 
     creditsTxt = localize('Contributors')
+        + '\n\nJoyLiu: Modify the interface as Chinese version, '
         + '\n\nNathan Dinsmore: Saving/Loading, Snap-Logo Design, '
         + '\ncountless bugfixes and optimizations'
         + '\nMichael Ball: Time/Date UI, Library Import Dialog,'
@@ -4252,6 +4282,9 @@ IDE_Morph.prototype.newProject = function () {
     this.createCorral();
     this.selectSprite(this.stage.children[0]);
     this.fixLayout();
+    if (MorphicPreferences.isSnapJr) {
+        this.startSnapJr();
+    }
 };
 
 IDE_Morph.prototype.save = function () {
@@ -6420,6 +6453,32 @@ IDE_Morph.prototype.warnAboutIE = function () {
 IDE_Morph.prototype.isIE = function () {
     var ua = navigator.userAgent;
     return ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+};
+
+// SnapJr.
+// start Children's model
+IDE_Morph.prototype.startSnapJr = function () {
+    var myself = this;
+    MorphicPreferences.isSnapJr = true;
+    this.saveSetting('snapjr', 'snapjr')
+    this.showMessage(localize('Loading Snap Jr.'));
+    if (location.protocol === 'file:') {
+        this.importLocalFile();
+        return;
+    }
+    this.getURL(
+        'Examples/SnapJunior.xml',
+        function (contents) {
+            myself.droppedText(contents, 'Snap Jr.');
+        }
+    );
+};
+
+// cancel Children's model
+IDE_Morph.prototype.cancelSnapJr = function () {
+    MorphicPreferences.isSnapJr = false;
+    this.removeSetting('snapjr');
+    this.createNewProject();
 };
 
 // ProjectDialogMorph ////////////////////////////////////////////////////

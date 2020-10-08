@@ -1310,7 +1310,8 @@ var standardSettings = {
     rasterizeSVGs: false,
     isFlat: true,
     grabThreshold: 5,
-    showHoles: false
+    showHoles: false,
+    isSnapJr: false     //Children's model
 };
 
 var touchScreenSettings = {
